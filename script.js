@@ -13,7 +13,7 @@ function printOutput(num){
 	}
 	else{
 		document.getElementById("output-value").innerText=getFormattedNumber(num);
-	}	
+	}
 }
 function getFormattedNumber(num){
 	if(num=="-"){
@@ -53,6 +53,7 @@ for(var i =0;i<operator.length;i++){
 				history=history+output;
 				if(this.id=="="){
 					var result=eval(history);
+					new Audio('Audio/RingSound.mp3').play();
 					printOutput(result);
 					printHistory("");
 				}
@@ -63,7 +64,7 @@ for(var i =0;i<operator.length;i++){
 				}
 			}
 		}
-		
+
 	});
 }
 var number = document.getElementsByClassName("number");
